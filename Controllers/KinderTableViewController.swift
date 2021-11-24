@@ -14,6 +14,7 @@ import GoogleMobileAds
 class KinderTableViewController: UITableViewController {
     @IBOutlet weak var sidoText: UITextView!
     @IBOutlet weak var cityText: UITextView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     let kinderViewModel = KinderViewModel()
     let disposeBag = DisposeBag()
     let sidoPickerView = UIPickerView()
@@ -29,6 +30,8 @@ class KinderTableViewController: UITableViewController {
 
 extension KinderTableViewController{
     func setUp(){
+        spinner.center = self.view.center
+        
         cityText.rx.text.orEmpty
             .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .asDriver(onErrorJustReturn: "")
@@ -54,6 +57,8 @@ extension KinderTableViewController{
             })
             .disposed(by: disposeBag)
         setPickerDrive()
+        NotificationCenter.default.addObserver(self, selector: #selector(startSpin(_:)), name: Notification.Name("startSpin"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopSpin(_:)), name: Notification.Name("stopSpin"), object: nil)
     }
     
     func setPickerDrive() {
@@ -114,5 +119,12 @@ extension KinderTableViewController{
             self.kinderViewModel.cityId.bind(to: vc.detailKinderViewModel.cityId)
                 .disposed(by: disposeBag)
         }
+    }
+    
+    @objc func startSpin(_ notification: Notification) {
+        self.spinner.startAnimating()
+    }
+    @objc func stopSpin(_ notification: Notification){
+        self.spinner.stopAnimating()
     }
 }
