@@ -4,18 +4,15 @@ import RxCocoa
 import Alamofire
 
 
-let API_KEY = UserDefaults.standard.string(forKey: "API_KEY") ?? ""
+
 final class APIManager{
     static let shared = APIManager()
+    
 }
-extension Notification.Name {
-    static let startSpin = Notification.Name("startSpin")
-    static let stopSpin = Notification.Name("stopSpin")
-}
+
 // MARK: - Get Kinder List
 extension APIManager{
     func getKinder(_ id: Int) -> Observable<[Kinder]> {
-        NotificationCenter.default.post(name: .startSpin, object: nil)
         return Observable.create { observer -> Disposable in
             let url = "https://e-childschoolinfo.moe.go.kr/api/notice/basicInfo.do?key=\(API_KEY)&sidoCode=\(id/1000)&sggCode=\(id)"
             AF.request(url)
@@ -26,13 +23,11 @@ extension APIManager{
                         do{
                             let dataJSON = try JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
                             let getInstanceData = try? JSONDecoder().decode(KinderArr.self, from: dataJSON)
-                            NotificationCenter.default.post(name: .stopSpin, object: nil)
                             observer.onNext(getInstanceData!.kinderInfo)
                             observer.onCompleted()
                         }catch{
                         }
                     case .failure(let err):
-                        NotificationCenter.default.post(name: .stopSpin, object: nil)
                         observer.onError(err)
                     }
                 }

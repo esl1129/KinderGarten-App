@@ -13,9 +13,7 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UserDefaults.standard.set("1081efe144f64d80af0e327f0f74056c",forKey: "API_KEY")
-        UserDefaults.standard.set(data,forKey: "cityKey")
-
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 

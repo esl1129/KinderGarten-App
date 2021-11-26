@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="de4-9s-fQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="de4-9s-fQZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -68,12 +68,6 @@
                                 <constraint firstItem="Jvn-Xb-Sym" firstAttribute="centerY" secondItem="2Yq-DH-qph" secondAttribute="centerY" id="qHK-GM-nck"/>
                             </constraints>
                         </view>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="UfJ-eI-f02">
-                            <rect key="frame" x="0.0" y="220" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" name="point"/>
-                            <color key="color" name="point"/>
-                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kinderCell" textLabel="qxv-xk-TIU" detailTextLabel="rMi-Ue-Ufg" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="WqD-Cz-22o">
                                 <rect key="frame" x="20" y="102" width="374" height="100"/>
@@ -143,7 +137,6 @@
                     <connections>
                         <outlet property="cityText" destination="Jvn-Xb-Sym" id="288-z1-vlW"/>
                         <outlet property="sidoText" destination="ejL-MQ-VQf" id="te9-vu-bjc"/>
-                        <outlet property="spinner" destination="UfJ-eI-f02" id="dSo-6r-4oZ"/>
                         <segue destination="VYU-xK-fX0" kind="show" identifier="showDetail" id="Rzq-UJ-4d4"/>
                     </connections>
                 </tableViewController>
@@ -154,7 +147,7 @@
         <!--설정-->
         <scene sceneID="Yrq-Jn-00h">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="oxv-so-9ZL" customClass="SettingTableViewController" customModule="K_KinderGarten" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="oxv-so-9ZL" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="KUd-IF-I5O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,45 +163,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="라이트 모드로 변경하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sy7-L4-FyP">
-                                                    <rect key="frame" x="55.5" y="0.0" width="298.5" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRU-F7-TPM">
-                                                    <rect key="frame" x="20.5" y="22.5" width="19.5" height="24.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <imageReference key="image" image="iphone" catalog="system" symbolScale="large"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="tableviewback"/>
-                                        <color key="tintColor" name="point"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" selected="YES"/>
-                                        </accessibility>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="uSD-Jf-Ucd">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gzY-JR-Osq" imageView="SVH-2e-z8V" rowHeight="70" style="IBUITableViewCellStyleDefault" id="2DU-Oz-Kkv">
-                                        <rect key="frame" x="20" y="124" width="374" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2DU-Oz-Kkv" id="pDZ-pP-Sxu">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="회원 정보 (미구현)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gzY-JR-Osq">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="회원 정보 (미구현)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sy7-L4-FyP">
                                                     <rect key="frame" x="56.25" y="0.0" width="297.75" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SVH-2e-z8V">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRU-F7-TPM">
                                                     <rect key="frame" x="19.25" y="24.5" width="22" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
@@ -230,9 +192,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="설정" id="nuY-Sz-b78"/>
-                    <connections>
-                        <outlet property="displayStyleLabel" destination="Sy7-L4-FyP" id="eAa-jY-rky"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdD-Fg-3ze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -770,18 +729,18 @@
                                         <rect key="frame" x="20" y="836" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YbS-cg-bBs" id="rbC-PG-PrI">
-                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="344.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="기타 정보 (수업일수, 공제회, 보험)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="txo-vA-x0h">
-                                                    <rect key="frame" x="43.5" y="0.0" width="305" height="44"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="기타 정보 (수업일수, 공제회, 보험)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="txo-vA-x0h">
+                                                    <rect key="frame" x="55.5" y="0.0" width="281" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="ellipsis.circle.fill" catalog="system" id="fmW-9S-gem">
-                                                    <rect key="frame" x="8.25" y="12.5" width="20" height="19"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="ellipsis.circle.fill" catalog="system" id="fmW-9S-gem">
+                                                    <rect key="frame" x="20.25" y="12.5" width="20" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -1704,7 +1663,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="2년 이상 4년 미만 교사 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0RM-hp-1s8">
-                                                    <rect key="frame" x="43.5" y="15" width="136" height="14.5"/>
+                                                    <rect key="frame" x="47" y="15" width="136" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1718,7 +1677,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="2.square.fill" catalog="system" id="csQ-WS-agP">
-                                                    <rect key="frame" x="8.5" y="13" width="19.5" height="17.5"/>
+                                                    <rect key="frame" x="10.25" y="13" width="19.5" height="17.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -1734,7 +1693,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="4년 이상 6년 미만 교사 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2mN-L9-lX7">
-                                                    <rect key="frame" x="43.5" y="15" width="136.5" height="14.5"/>
+                                                    <rect key="frame" x="47" y="15" width="136.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1748,7 +1707,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="4.square.fill" catalog="system" id="7NC-h8-bZs">
-                                                    <rect key="frame" x="8.5" y="13" width="19.5" height="17.5"/>
+                                                    <rect key="frame" x="10.25" y="13" width="19.5" height="17.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -1764,7 +1723,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="6년 이상 교사 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HU1-da-u8E">
-                                                    <rect key="frame" x="43.5" y="15" width="90.5" height="14.5"/>
+                                                    <rect key="frame" x="47" y="15" width="90.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1778,7 +1737,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="6.square.fill" catalog="system" id="vWZ-kH-gOf">
-                                                    <rect key="frame" x="8.5" y="13" width="19.5" height="17.5"/>
+                                                    <rect key="frame" x="10.25" y="13" width="19.5" height="17.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -2684,21 +2643,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="CCTV 건물 내부 설치 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b0N-wk-udX">
-                                                    <rect key="frame" x="43.5" y="15" width="119" height="14.5"/>
+                                                    <rect key="frame" x="55.5" y="15" width="119" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e5S-uu-6Qj">
-                                                    <rect key="frame" x="333" y="15" width="33" height="14.5"/>
+                                                    <rect key="frame" x="321" y="15" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="camera.circle.fill" catalog="system" id="JIM-8C-Q4U">
-                                                    <rect key="frame" x="8.25" y="12.5" width="20" height="19"/>
+                                                    <rect key="frame" x="20.25" y="12.5" width="20" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -2714,21 +2673,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="CCTV 건물 외부 설치 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bzc-Yz-P0M">
-                                                    <rect key="frame" x="43.5" y="15" width="119" height="14.5"/>
+                                                    <rect key="frame" x="55.5" y="15" width="119" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T9K-OP-E8P">
-                                                    <rect key="frame" x="333" y="15" width="33" height="14.5"/>
+                                                    <rect key="frame" x="321" y="15" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="camera.circle.fill" catalog="system" id="mku-me-21s">
-                                                    <rect key="frame" x="8.25" y="12.5" width="20" height="19"/>
+                                                    <rect key="frame" x="20.25" y="12.5" width="20" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -4107,7 +4066,6 @@
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="121"/>
         <image name="hourglass" catalog="system" width="102" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="iphone" catalog="system" width="108" height="128"/>
         <image name="leaf.fill" catalog="system" width="128" height="106"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
         <image name="link" catalog="system" width="128" height="122"/>

@@ -48,8 +48,7 @@ extension ParseManager{
     public func getSido(_ a : String) -> Observable<[String]> {
         var sidos = [String]()
         sidos.append("-")
-        let cities = UserDefaults.standard.object(forKey: "cityKey") as! [String:Any?]
-        cities.sorted{$0.key < $1.key}.forEach{
+        data.sorted{$0.key < $1.key}.forEach{
             sidos.append($0.key)
         }
         NSLog("Success : getSidoName")
@@ -57,18 +56,18 @@ extension ParseManager{
     }
     
     public func getCity(_ name: String) -> Observable<[String]>{
-        guard let cities = UserDefaults.standard.object(forKey: "cityKey") as? [String:Any?], let items = cities[name] as? [String:Any?] else {
+        guard let items = data[name] else {
             NSLog("Failed : getCityName : - \(name)")
             return Observable.just([])
         }
-        var towns = [String]()
-        towns.append("-")
+        var citys = [String]()
+        citys.append("-")
         items.sorted{$0.key < $1.key}.forEach{
-            towns.append($0.key)
+            citys.append($0.key)
         }
         NSLog("Success : getCityName : - \(name)")
         
-        return Observable.just(towns)
+        return Observable.just(citys)
     }
     
     public func getCityIdByName(_ sidoName: String, _ cityName: String) -> Int{
